@@ -17,10 +17,8 @@ describe("home de www.freerangetesters.com", () => {
     });
     it("should have 12 elements in the cursos page", () => {
         cy.xpath('//*[@id="comp-l02x1m8d1label"]').click();
-        cy.get('[data-testid="linkElement"] > .M3I7Z2').should(
-            "have.length",
-            12
-        );
+        cy.get('[data-testid="linkElement"] > .M3I7Z2').as("BotonEmpezar");
+        cy.get("@BotonEmpezar").should("have.length", 12);
     });
     it("title in Conocenos section should have class color_15 wixui-rich-text__text", () => {
         cy.get("#comp-l02x1m8d5label").click();
