@@ -32,4 +32,8 @@ describe("home de www.freerangetesters.com", () => {
             timeout: 6000,
         }).should("have.text", "Los valores de la comunidad");
     });
+    it("using find command", () => {
+        cy.get("").should("be.checked");
+        cy.get("#form").find('[type="checkbox"]').should("be.checked");
+    });
 });
