@@ -54,7 +54,7 @@ describe("UI tests", () => {
         cy.get("#column-a").drag("#column-b");
         cy.get("#column-a").should("have.text", "B");
         cy.get("#column-b").should("have.text", "A");
-    };
+    });
     it("iframe test", () => {
         cy.contains("Frames").click();
         cy.get("#mce_0_ifr").type("Hello World");
