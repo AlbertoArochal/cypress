@@ -17,7 +17,7 @@ describe("explicits and implicits validations", () => {
     });
     it("wait for promises to resolve", () => {
         function waitOneSecond() {
-            return new cypress.Promise((resolve) => {
+            return new cypress.Promise((resolve, reject) => {
                 setTimeout(() => {
                     waited = true;
                     resolve("foo");
