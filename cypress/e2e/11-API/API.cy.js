@@ -20,4 +20,21 @@ describe("API testing with cypress", () => {
             );
         });
     });
+    if (
+        ("should make a delete call",
+        () => {
+            cy.request(
+                "DELETE",
+                "https://jsonplaceholder.typicode.com/posts/1",
+                {
+                    userId: 1,
+                    title: "Cypress API testing",
+                    id: 101,
+                    body: "Cypress API testing is fun",
+                }
+            ).then((response) => {
+                expect(response.status).to.eq(200);
+            });
+        })
+    );
 });
